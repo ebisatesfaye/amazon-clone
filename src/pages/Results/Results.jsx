@@ -40,6 +40,7 @@ useEffect(() => {
               <ProductCard
               key={product.id}
               product={product}
+              renderAdd={true}
               />
             ))}
   

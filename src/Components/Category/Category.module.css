@@ -27,7 +27,7 @@
 }
 .category_container{
     position: relative;
-    margin-top: -230px;
+    margin-top: -330px;
     display: grid ;
     grid-template-columns: repeat(4,1fr);
     place-items: center;
