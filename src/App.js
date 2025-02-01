@@ -9,11 +9,11 @@ import { auth } from './Utility/firebase';
 import { DataContext } from './Components/DataProvider/DataProvider';
 
 function App() {
-  const [{user},dispatch] = useContext(DataContext)
+  const [{user},dispatch] = useContext(DataContext);
   useEffect(() =>{
     auth.onAuthStateChanged((authUser) => {
 if(authUser){
-  console.log(authUser)
+  // console.log(authUser)
   dispatch({
     type:Type.SET_USER,
     user:authUser,
