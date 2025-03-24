@@ -60,13 +60,14 @@
 .search input{
     border: 1px solid white;
     width: 100%;
-    margin-right: -2px;
+    margin-right: -50px;
     /* border: none; */
 }
 .search svg{
     padding: 7px;
     background: #febd69;
     color: #1a1a1a;
+    height: 39px;
 }
 .search svg:hover{
     background-color: #d49644;
@@ -142,12 +143,38 @@
         display: block;
         flex-direction: column !important;
         height: auto;
+        padding-bottom: 2%;
+    }
+    .logo_container{
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        flex: 1;
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
+    .order_container a {
+      margin: 1%;
+    }
+    .order_container{
+        margin-left: auto;
+        margin-right: auto;
     }
     .lower_container ul li:not 
     :first-child{
         display: none;
     }
     .language{
-        display: none;
+        /* display: none; */
     }
 }

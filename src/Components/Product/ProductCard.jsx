@@ -23,7 +23,7 @@ function ProductCard({product,flex,renderDesc,renderAdd}) {
 
 
   return (
-    <div className={`${classes.card_container} ${flex? classes.product_flexed : ''}`}>
+    <div className={`${classes.card_container} ${flex? classes.product_flexed : ''} ${classes.card_container2}`}>
       <Link to={`/products/${id}`}>
         <img src={image} alt="" />
       </Link>

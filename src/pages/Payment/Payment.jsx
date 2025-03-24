@@ -10,7 +10,9 @@ import {axiosinstance} from '../../Api/axios';
 import {ClipLoader } from 'react-spinners';
 import {db} from '../../Utility/firebase';
 import {useNavigate} from 'react-router-dom';
-import { Type } from '../../Utility/action.type'
+import { Type } from '../../Utility/action.type';
+import { doc, collection, setDoc } from "firebase/firestore"; 
+
 
 
 
@@ -55,16 +57,27 @@ const handlePayment = async (e) => {
           card : elements.getElement(CardElement),
         }
       });
-console.log(paymentIntent);
-console.log(user)
-      // await db.collection("users").doc(user.uid)
+// console.log(paymentIntent);
+// console.log(user)
+
+await setDoc(
+  doc(db, "users", user.uid, "orders", paymentIntent.id), 
+  {
+      basket: basket,
+      amount: paymentIntent.amount,
+      created: paymentIntent.created,
+  }
+);
+
+
+      // await collection(db ,"users").doc(user.uid)
       // .collection("orders").doc(paymentIntent.id)
       // .set({
       //   basket: basket,
       //   amount: paymentIntent.amount,
       //   created:paymentIntent.created,
       // })
-      // empty the basket 
+      // // empty the basket 
       dispatch({type:Type.EMPTY_BASKET})
       // console.log(paymentIntent)  
       setProcessing(false);
